@@ -1,0 +1,1442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installation Guide | SUSE Linux Enterprise Virtual Machine Driver Pack 2.5</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise Virtual Machine Driver Pack" /><meta name="product-number" content="2.5" /><meta name="book-title" content="Installation Guide" /><link rel="home" href="index.html" title="Installation Guide" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="single-crumb" href="index.html"><span class="single-contents-icon"></span>Installation Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="single-crumb" href="index.html"><span class="single-contents-icon"></span>Show Contents: Installation Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="index.html#sec-vmdp-drivers-vdmp"><span class="number">1 </span><span class="name">About SLE-VMDP</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-certification"><span class="number">2 </span><span class="name">SLE-VMDP Certification</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-driver-installation"><span class="number">3 </span><span class="name">General Installation</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span class="name">QEMU Guest Agent</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-v2v-intro"><span class="number">5 </span><span class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-best"><span class="number">6 </span><span class="name">Best Practices</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-setup-expert"><span class="number">7 </span><span class="name">Advanced Installation Options</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-step-virt-manager"><span class="number">8 </span><span class="name">Step-by-Step Installation</span></a></li><li class="inactive"><a href="index.html#sec-vmdp-legal"><span class="number">9 </span><span class="name">Legal Notice</span></a></li><li class="inactive"><a href="index.html#id-1.12"><span class="number">10 </span><span class="name">GNU Free Documentation License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="article-vmdp-driver" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname">SUSE Linux Enterprise Virtual Machine Driver Pack</span> <span class="productnumber">2.5</span></h6><div><h1 class="title">Installation Guide </h1></div><div class="date"><span class="imprint-label">Publication Date: </span>01/29/2020</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="index.html#sec-vmdp-drivers-vdmp"><span class="number">1 </span><span class="name">About SLE-VMDP</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-certification"><span class="number">2 </span><span class="name">SLE-VMDP Certification</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-driver-installation"><span class="number">3 </span><span class="name">General Installation</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span class="name">QEMU Guest Agent</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-v2v-intro"><span class="number">5 </span><span class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-best"><span class="number">6 </span><span class="name">Best Practices</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-setup-expert"><span class="number">7 </span><span class="name">Advanced Installation Options</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-step-virt-manager"><span class="number">8 </span><span class="name">Step-by-Step Installation</span></a></span></dt><dt><span class="sect1"><a href="index.html#sec-vmdp-legal"><span class="number">9 </span><span class="name">Legal Notice</span></a></span></dt><dt><span class="sect1"><a href="index.html#id-1.12"><span class="number">10 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div>
+ 
+ 
+ <div class="sect1 " id="sec-vmdp-drivers-vdmp"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-drivers-vdmp"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">About SLE-VMDP</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-drivers-vdmp">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-vdmp</li></ul></div></div></div></div>
+  
+
+  <p>
+   SUSE Linux Enterprise Virtual Machine Driver Pack contains Windows* disk and network
+   device drivers to enable the high-performance hosting of these unmodified
+   guest operating systems on top of SUSE Linux Enterprise Server. Paravirtualized drivers for
+   SUSE Linux Enterprise Server are available, but not included in this Driver Pack.
+   Paravirtualized drivers for SUSE Linux Enterprise Server are distributed under an open source
+   license. They are included in both physical and electronic media of SUSE Linux Enterprise Server
+   and corresponding Customer Center update channels.
+  </p>
+
+  <div class="sect2 " id="sec-vmdp-drivers-introduction"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-introduction"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-drivers-introduction">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-introduction</li></ul></div></div></div></div>
+   
+   <p>
+    Virtualization allows the consolidation of Linux workloads on newer, more
+    powerful, energy-efficient hardware. Paravirtualized operating systems such
+    as SUSE Linux Enterprise Server are aware of the underlying virtualization platform, and can
+    therefore interact efficiently with it. Unmodified operating systems are
+    unaware of the virtualization platform and expect to interact directly with
+    the hardware. Because this is not possible when consolidating servers, the
+    hardware must be emulated for the operating system. Emulation can be slow,
+    but it is especially troubling for high-throughput disk and network
+    subsystems. Most performance loss occurs in this area.
+   </p>
+  </div>
+
+  <div class="sect2 " id="sec-vmdp-drivers-performance"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-performance"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Bringing Performance</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-drivers-performance">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-performance</li></ul></div></div></div></div>
+   
+   <p>
+    The device drivers in SUSE Linux Enterprise Virtual Machine Driver Pack bring many of
+    the performance advantages of paravirtualized operating systems to
+    unmodified operating systems: Only the paravirtualized device driver (not
+    the rest of the operating system) is aware of the virtualization platform.
+    For example, a paravirtualized disk device driver appears as a normal,
+    physical disk to the operating system. However, the device driver interacts
+    directly with the virtualization platform (with no emulation) to
+    efficiently deliver disk access, allowing the disk subsystems to operate at
+    near native speeds in a virtualized environment, without requiring changes
+    to existing operating systems.
+   </p>
+  </div>
+
+  <div class="sect2 " id="sec-vmdp-drivers-subscription"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-subscription"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support Subscription</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-drivers-subscription">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-subscription</li></ul></div></div></div></div>
+   
+   <p>
+    The customer support you receive for the SUSE Linux Enterprise Virtual Machine Driver Pack is at the same level
+    as your
+    <a class="ulink" href="https://www.suse.com/support/programs/subscriptions/" target="_blank">SUSE Linux Enterprise
+    support subscription<span class="ulink-url"> (https://www.suse.com/support/programs/subscriptions/)</span></a>.
+   </p>
+  </div>
+  <div class="sect2 " id="sec-vmdp-drivers-whatsnew"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-whatsnew"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What's New in 2.5</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-drivers-whatsnew">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-whatsnew</li></ul></div></div></div></div>
+    
+    <p>
+      The key update in version 2.5 are:
+    </p>
+    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+	<p>Support for SUSE Linux Enterprise Server 12 SP3 and 15 GA</p>
+      </li><li class="listitem ">
+	<p>copy/paste interaction between Virtual Machine and host</p>
+      </li><li class="listitem ">
+	<p>Native support of 10gbis NIC</p>
+      </li><li class="listitem ">
+	<p>RNG device support (random device)</p>
+      </li><li class="listitem ">
+	<p>Numerous bug fixes and enhancements</p>
+      </li></ul></div>
+  </div>
+ </div>
+
+ <div class="sect1 " id="sec-vmdp-certification"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-certification"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP Certification</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-certification">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification</li></ul></div></div></div></div>
+ 
+
+ <p>
+  SLE-VMDP has been certified by Microsoft:
+  <a class="ulink" href="http://www.windowsservercatalog.com/item.aspx?idItem=979ea66f-7f52-a04c-df5b-88ecc4dfa5b0&amp;bCatID=1282" target="_blank">http://www.windowsservercatalog.com/item.aspx?idItem=979ea66f-7f52-a04c-df5b-88ecc4dfa5b0&amp;bCatID=1282</a>
+ </p>
+
+ <div class="sect2 " id="sec-vmdp-certification-whql"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-certification-whql"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">WHQL</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-certification-whql">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification-whql</li></ul></div></div></div></div>
+  
+  <p>
+   SLE-VMDP has passed WHQL certification. See
+   <a class="ulink" href="http://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx" target="_blank">http://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx</a>
+   for more information.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-certification-svvp"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-certification-svvp"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SVVP</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-certification-svvp">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification-svvp</li></ul></div></div></div></div>
+  
+  <p>
+   The SVVP program has validated our SLE-VMDP paravirtualized drivers. Thus,
+   Microsoft customers running copies of Windows* Server they have acquired and
+   licensed from Microsoft directly can receive technical support for Windows*
+   Server in virtualized environments. See
+   <a class="ulink" href="http://www.windowsservercatalog.com/svvp.aspx" target="_blank">http://www.windowsservercatalog.com/svvp.aspx</a> for more
+   information.
+  </p>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-driver-installation"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-driver-installation"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Installation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-installation</li></ul></div></div></div></div>
+ 
+
+ <p>
+  The SUSE Linux Enterprise Virtual Machine Driver Pack is available for download as one
+  binary file: a Windows self-extracting zip file (<span class="emphasis"><em>.exe</em></span>
+  extension). There is also a virtual floppy disk (<span class="emphasis"><em>.vfd</em></span>
+  extension) for Windows* 2003 and an ISO image (<span class="emphasis"><em>.iso</em></span>) for
+  Windows* 2008 and newer that may be used for VMs running on KVM.
+ </p>
+
+ <div class="sect2 " id="sec-vmdp-driver-prerequisites"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-prerequisites"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-prerequisites">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-prerequisites</li></ul></div></div></div></div>
+  
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     SUSE Linux Enterprise Server 10 SP4 or later, or SUSE Linux Enterprise Server 11 SP2 or later
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Fully virtualized Windows* virtual machines
+    </p>
+   </li></ul></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-setup-exe"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-setup-exe"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setup.exe Installation Instructions for KVM and Xen</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-setup-exe">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-setup-exe</li></ul></div></div></div></div>
+  
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p>
+     Download the Windows* <code class="command">VMDP-WIN-VERSION.exe</code> file
+     directly into your Windows* VM.
+    </p>
+   </li><li class="step ">
+    <p>
+     Launch the <code class="command">VMDP-WIN-VERSION.exe</code> to extract the
+     installation program.
+    </p>
+   </li><li class="step ">
+    <p>
+     Launch the <code class="command">setup.exe</code> from the root of the newly created
+     directory.
+    </p>
+   </li><li class="step ">
+    <p>
+     Accept the <span class="emphasis"><em>EULA</em></span> and follow the prompts to complete
+     the driver installation.
+    </p>
+   </li><li class="step ">
+    <p>
+     Reboot the VM when prompted by the installation program.
+    </p>
+   </li></ol></div></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-additionnal-info"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-additionnal-info"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional KVM VirtIO Setup Instructions</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-additionnal-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-additionnal-info</li></ul></div></div></div></div>
+  
+  <p>
+   <code class="command">Setup.exe</code> can be run with and without VirtIO devices
+   present in the VM. If the devices are present in the VM when setup is run,
+   the drivers are installed and loaded at that time. If the VirtIO devices are
+   not present when setup is run, shut down the VM, add the VirtIO devices, and
+   start the VM. After booting, Windows* will discover the new devices and load
+   the previously installed drivers.
+  </p>
+  <p>
+   To boot a running VM on a VirtIO disk, the VirtIO disk driver must be
+   installed on a secondary/temporary (e:) VirtIO disk. After the driver is
+   installed and controlling the disk, shut down the VM. From
+   <span class="guimenu">virt-manager</span>, delete the secondary VirtIO disk and delete
+   the IDE boot disk. Now add a disk of type VirtIO or VirtIO SCSI and give it
+   the location for the boot disk. Boot the VM. The VirtIO driver will now be
+   controlling the boot disk.
+  </p>
+  <div id="id-1.5.5.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Installation Failure</h6>
+   
+   <p>
+    Failure to install a VirtIO disk driver on a secondary disk before changing
+    the boot disk to a VirtIO or VirtIO SCSI disk will cause the VM to crash
+    with bug check <span class="emphasis"><em>0x7b</em></span> (inaccessible boot disk).
+   </p>
+  </div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-install-instruction"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-install-instruction"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation Instructions for <code class="literal">.vfd</code> and <code class="literal">.iso</code></span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-install-instruction">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-install-instruction</li></ul></div></div></div></div>
+  
+  <p>
+   A Windows* VM may attach the SLE-VMDP <span class="emphasis"><em>vfd</em></span> or
+   <span class="emphasis"><em>iso</em></span>. The <span class="emphasis"><em>vfd</em></span> is targeted for
+   Windows* 2003 VMs running on KVM. It contains VirtIO disk drivers and a
+   self-extracting <code class="filename">*.exe</code> file that contain all the VirtIO
+   drivers for only Windows* 2003. The ISO contains VirtIO disk drivers for
+   Windows* 2008 and newer. It also contains the full SLE-VMDP
+   <code class="filename">*.exe</code> file that contains all the VirtIO and Xen drivers
+   for all supported Windows* platforms.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-install-at-vm-creation"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-install-at-vm-creation"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">.vfd</code> and <code class="literal">.iso</code> for VirtIO Boot Disk Installation at VM Creation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-install-at-vm-creation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-install-at-vm-creation</li></ul></div></div></div></div>
+  
+  <p>
+   This method is only used for VMs running on KVM and is used to install the
+   VirtIO disk driver on the boot disk while the VM is being installed.
+  </p>
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p>
+     See
+     <a class="xref" href="index.html#sec-vmdp-step-virt-manager" title="8. Step-by-Step Installation">Section 8, “Step-by-Step Installation”</a>
+     for attaching an ISO, setting up<span class="emphasis"><em>Virtio Network</em></span>, and a
+     VirtIO disk for the Windows* VM.
+    </p>
+   </li><li class="step ">
+    <p>
+     Add the <span class="emphasis"><em>vfd</em></span> or <span class="emphasis"><em>iso</em></span> to the VM
+     configuration. Use the <span class="emphasis"><em>vfd</em></span> for Windows* 2003 and the
+     <span class="emphasis"><em>iso</em></span> for Windows 2008* and newer.
+    </p>
+   </li><li class="step ">
+    <p>
+     Set the boot disk to be of type VirtIO or VirtIO SCSI.
+    </p>
+   </li><li class="step ">
+    <p>
+     Finish all other VM configuration options.
+    </p>
+   </li><li class="step ">
+    <p>
+     Start the VM installation.
+    </p>
+   </li><li class="step ">
+    <p>
+     For Windows 2003, at the very beginning of the installation there is an
+     option to press <span class="guimenu">F6</span> for an OEM SCSI disk installation.
+     At that time, press <span class="guimenu">F6</span>. The VirtIO disk driver from the
+     <span class="emphasis"><em>vfd</em></span> can then be selected and installed.
+    </p>
+   </li><li class="step ">
+    <p>
+     For Windows 2008* and newer, on the <span class="guimenu">Where do you want to install
+     Windows</span> screen, select <span class="guimenu">Load driver</span> and follow
+     the prompts. This will allow the VirtIO disk driver to be installed for
+     the boot disk.
+    </p>
+   </li><li class="step ">
+    <p>
+     Continue the Windows installation.
+    </p>
+   </li><li class="step ">
+    <p>
+     After the VM is completely installed, the remaining VirtIO drivers can be
+     installed by copying the <code class="command">VMDP-WIN-VERSION.exe</code> from the
+     <span class="emphasis"><em>vfd</em></span> or <span class="emphasis"><em>iso</em></span> onto the VM's disk
+     and performing a normal <code class="command">VMDP-WIN-VERSION.exe</code>
+     installation.
+    </p>
+   </li></ol></div></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-xen-instructions"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-xen-instructions"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional Xen Setup Instructions</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-xen-instructions">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-xen-instructions</li></ul></div></div></div></div>
+  
+  <p>
+   Setup and the <code class="option">/boot_vscsi</code> option: The Xen SLE-VMDP SCSI driver
+   is capable of controlling a physical SCSI disk such as
+   <code class="filename">/dev/sdb</code>. To run the SLE-VMDP SCSI driver on the boot disk,
+   use setup <code class="option">/boot_vscsi</code>. If the <code class="option">/boot_vscsi</code>
+   option is not used with setup, <code class="command">pvctrlw.exe</code> can be used
+   later to indicate that the SLE-VMDP SCSI driver should control the boot disk.
+   Before using the <code class="option">/boot_vscsi</code> option or
+   <code class="command">pvctrlw.exe</code>, the VM's configuration file must already
+   contain the necessary SCSI information for the boot disk: the disk line
+   needs to reference the physical disk, for example
+   <span class="emphasis"><em>disk=['phy:/dev/sdb,...']</em></span> and there must be a
+   <span class="emphasis"><em>vscsi= </em></span>line that corresponds to the physical disk. SCSI
+   devices and disks, other than the boot disk, that are to be controlled by
+   the SLE-VMDP SCSI driver are not placed in the <span class="emphasis"><em>disk=</em></span> line
+   but are only referenced in the <span class="emphasis"><em>vscsi=</em></span> line.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-uninstall"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-uninstall"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uninstalling the Driver Pack</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-uninstall">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-uninstall</li></ul></div></div></div></div>
+  
+  <p>
+   To uninstall the SUSE Linux Enterprise Virtual Machine Driver Pack, execute the
+   <code class="command">uninstall.exe</code> from the <code class="filename">\Program
+   Files\vmdp</code> folder. <code class="command">Uninstall.exe</code> will
+   uninstall the SUSE Linux Enterprise Virtual Machine Driver Pack and remove the associated
+   files for the hypervisor that the VM is currently running on. The
+   <code class="option">/virtio</code> and <code class="option">/xen</code> parameters forces the
+   uninstall of those drivers reqardless of the running hypervisor. When
+   uninstalling, it is important to <span class="emphasis"><em>reboot</em></span> the VM on the
+   currently running hypervisor to all allow the uninstall to clean up
+   additional files and registry entries on reboot.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-upgrade"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-upgrade"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading the Driver Pack</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-upgrade">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-upgrade</li></ul></div></div></div></div>
+  
+  <p>
+   <code class="command">Setup.exe</code> can be used to update most existing
+   installations. To update an existing installation do the following:
+  </p>
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p>
+     Download the <code class="command">VMDP-WIN-VERSION.exe</code> to your Windows VM.
+    </p>
+   </li><li class="step ">
+    <p>
+     Run <code class="command">VMDP-WIN-VERSION.exe</code> to extract the installation
+     program and support files into a subfolder of the folder containing
+     <code class="command">VMDP-WIN-VERSION.exe</code>.
+    </p>
+   </li><li class="step ">
+    <p>
+     Run <code class="command">Setup.exe</code> from the root of the extracted subfolder
+     and follow the on-screen instructions.
+    </p>
+   </li><li class="step ">
+    <p>
+     Any <span class="emphasis"><em>Found New Hardware Wizard</em></span> dialogs that pop up
+     after the update can be ignored or canceled.
+    </p>
+   </li></ol></div></div>
+  <p>
+   With some older installations, setup cannot perform an update. In these
+   cases, setup will inform you that the existing installation will need to be
+   uninstalled first. Uninstall the existing installation. After being
+   completely uninstalled, <code class="filename">setup.exe</code> can then be used to
+   install the new files.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-recover"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-recover"><span class="number">3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Recovering from a Failure</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-recover">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-recover</li></ul></div></div></div></div>
+  
+  <p>
+   If a failure is caused by the driver pack, you can safely remove the driver
+   pack and return to your previous system configuration.
+  </p>
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p>
+     Shut down the virtual machine and reboot in safe mode.
+    </p>
+   </li><li class="step ">
+    <p>
+     Uninstall the driver pack (see
+     <a class="xref" href="index.html#sec-vmdp-driver-uninstall" title="3.7. Uninstalling the Driver Pack">Section 3.7, “Uninstalling the Driver Pack”</a>).
+    </p>
+   </li></ol></div></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-driver-issue"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-issue"><span class="number">3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Known Issues</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-issue">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-issue</li></ul></div></div></div></div>
+  
+  <p>
+   For information on known issues for this release, see the README file within
+   the archive, or consult the SUSE Linux Enterprise Virtual Machine Driver Pack guides.
+  </p>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-qemu-guest-agent"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">QEMU Guest Agent</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-qemu-guest-agent">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-qemu-guest-agent</li></ul></div></div></div></div>
+ 
+
+ <p>
+  This section explain what <span class="emphasis"><em>qemu-ga</em></span> is and how to install
+  it.
+ </p>
+
+ <div class="sect2 " id="vmdp-qemu-guest-agent-info"><div class="titlepage"><div><div><h3 class="title" id="vmdp-qemu-guest-agent-info"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Qemu guest agent</span> <a title="Permalink" class="permalink" href="index.html#vmdp-qemu-guest-agent-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>vmdp-qemu-guest-agent-info</li></ul></div></div></div></div>
+  
+  <p>
+   SLE-VMDP setup allows for the installation of the qemu guest agent service for
+   Windows* when invoked with the <code class="command">/qemu-ga</code> command line
+   parameter. The qemu guest agent requires the VM to be equipped with the qemu
+   guest agent channel (see
+   <a class="xref" href="index.html#vmdp-qemu-guest-agent-channel" title="Step 4">Step 4</a>).
+   Without the <span class="emphasis"><em>qemu guest agent channel</em></span>, the qemu guest
+   agent can install but will not load. Trying to load without the channel
+   results in errors in the event log.
+  </p>
+  <p>
+   The qemu guest agent is built in the <span class="emphasis"><em>mingw</em></span> environment
+   on a Linux system with no modifications to the guest agent source code. The
+   guest agent and supporting DLLs remain under their respective GPL licenses.
+  </p>
+  <p>
+   Currently many of the features of the guest agent supported in Linux VMs
+   have not yet been implemented for Windows*. Therefore the usage of guest
+   agent in Windows* is somewhat limited at present.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-qemu-guest-agent-installation"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-qemu-guest-agent-installation"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Qemu Guest Agent Installation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-qemu-guest-agent-installation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-qemu-guest-agent-installation</li></ul></div></div></div></div>
+  
+  <p>
+   Open a <span class="guimenu">cmd.exe</span> from the start menu. Go to the path that
+   contains the <code class="filename">qemu-ga</code> directory. View the help with the
+   command <code class="command">qemu-ga.exe</code> <code class="option">--help</code>. To install
+   the service use:
+  </p>
+<div class="verbatim-wrap"><pre class="screen">qemu-ga.exe --service install</pre></div>
+  <p>
+   To start the service you can use the Windows* Service Administrative tools,
+   or the command line:
+  </p>
+<div class="verbatim-wrap"><pre class="screen">net start qemu-ga.exe</pre></div>
+  <div class="informalfigure">
+   <div class="mediaobject"><a xmlns="" href="images/vmdp_qemu-ga.png"><img src="images/vmdp_qemu-ga.png" width="" /></a></div>
+  </div>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-v2v-intro"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-v2v-intro"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-v2v-intro">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-intro</li></ul></div></div></div></div>
+ 
+
+ <p>
+  The <span class="emphasis"><em>virt-v2v</em></span> utility provides an easy way to convert
+  virtual machines from one hypervisor format to another (for example, from Xen
+  to KVM). In the case of Windows* guests running under Xen, this conversion
+  process includes support for the automatic deployment of the SLE-VMDP.
+ </p>
+
+ <div class="sect2 " id="sec-vmdp-v2v-package"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-v2v-package"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP RPM Package</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-v2v-package">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-package</li></ul></div></div></div></div>
+  
+  <p>
+   The <code class="systemitem">virt-v2v-vmdp</code> RPM is a
+   repackaging of the Windows* SLE-VMDP drivers into a directory structure usable
+   by the virt-v2v utility. After being installed on a KVM host, any Windows*
+   guests migrated to that host using the virt-v2v process can have the SLE-VMDP
+   drivers automatically installed.
+  </p>
+  <p>
+   By default, virt-v2v will first check for the existence of the SLE-VMDP on the
+   Windows* guest undergoing conversion. If found on the guest, and the
+   virt-v2v-vmdp RPM is installed on the target host (the machine running the
+   virt-v2v process), virt-v2v will automatically install the SLE-VMDP drivers as
+   part of the conversion. This driver reinstallation is required to replace
+   Xen specific drivers with virtio drivers for use with KVM.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-v2v-installation"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-v2v-installation"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">v2v --vmdp Parameter</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-v2v-installation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-installation</li></ul></div></div></div></div>
+  
+  <p>
+   Installation of the SLE-VMDP can be manually influenced during virt-v2v
+   migration using the <code class="option">–-vmdp</code> parameter:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <code class="option">--vmdp=auto</code>: only install the SLE-VMDP if already installed
+     on source image
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">--vmdp=always</code>: always install the SLE-VMDP during Windows*
+     guest conversions
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">--vmdp=never</code>: never install the SLE-VMDP
+    </p>
+   </li></ul></div>
+  <p>
+   In addition to installing the drivers included with the virt-v2v-vmdp RPM,
+   it is possible for virt-v2v to copy the SLE-VMDP setup program itself to the
+   converted guest. While not required, if the virt-v2v host is configured to
+   perform this, the SLE-VMDP setup program will be automatically ran upon first
+   login. This will ensure the install/uninstall program is registered with
+   Windows* and any residual Xen drivers are correctly uninstalled. To allow
+   for this capability, the SLE-VMDP setup program
+   (<code class="command">VMDP-WIN-2.5.exe</code>) must be copied to
+   <code class="filename">/var/lib/virt-v2v/software/windows</code> on the virt-v2v
+   host. After copying the executable in place, ensure the setup executable
+   name is correctly specified in
+   <code class="filename">/var/lib/virt-v2v/virt-v2v.db</code> as follows:
+  </p>
+<div class="verbatim-wrap"><pre class="screen">   &lt;!-- SUSE Virtual Machine Driver Pack (VMDP) setup program --&gt;
+   &lt;app os='windows' name='vmdp'&gt;
+     &lt;path&gt;windows/VMDP-WIN-2.5.exe&lt;/path&gt;
+   &lt;/app&gt;</pre></div>
+  <p>
+   The <code class="filename">virt-v2v-vmdp</code> RPM is available in the same download
+   location as the SLE-VMDP setup program.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-v2v-official-doc"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-v2v-official-doc"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Xen to KVM Documentation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-v2v-official-doc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-official-doc</li></ul></div></div></div></div>
+  
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     For SUSE Linux Enterprise Server 11, see
+     <a class="ulink" href="https://documentation.suse.com/sles-11/html/SLES-xen2kvmquick/art-sles-xen2kvmquick.html" target="_blank">https://documentation.suse.com/sles-11/html/SLES-xen2kvmquick/art-sles-xen2kvmquick.html</a>.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     For SUSE Linux Enterprise Server 12, see
+     <a class="ulink" href="https://documentation.suse.com/sles-12/html/SLES-all/art-sles-xen2kvmquick.html" target="_blank">https://documentation.suse.com/sles-12/html/SLES-all/art-sles-xen2kvmquick.html</a>.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     For SUSE Linux Enterprise Server 15, see
+     <a class="ulink" href="https://documentation.suse.com/sles-15/html/SLES-all/art-sles-xen2kvmquick.html" target="_blank">https://documentation.suse.com/sles-15/html/SLES-all/art-sles-xen2kvmquick.html</a>.
+    </p>
+   </li></ul></div>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-best"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-best"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Best Practices</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-best">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best</li></ul></div></div></div></div>
+ 
+
+ <p>
+  This section describes best practices, usage and potential problems using
+  SUSE Linux Enterprise Virtual Machine Driver Pack.
+ </p>
+
+ 
+
+ <div class="sect2 " id="sec-vmdp-driver-winwizard-vmdp-problems"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-winwizard-vmdp-problems"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Avoiding Problems with the Drivers</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-driver-winwizard-vmdp-problems">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-winwizard-vmdp-problems</li></ul></div></div></div></div>
+  
+  <p>
+   To avoid problems and potential failure of the device drivers in the driver
+   pack, you should avoid the following actions:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     Using the Device Manager to manage (update, disable, uninstall, etc.) the
+     device drivers in the driver pack.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Deleting driver files manually. Always use the uninstall utility (see
+     <a class="xref" href="index.html#sec-vmdp-driver-uninstall" title="3.7. Uninstalling the Driver Pack">Section 3.7, “Uninstalling the Driver Pack”</a>).
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Uninstalling the driver pack with the installation CD attached to the
+     virtual machine.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Canceling the installation when you see a security alert that indicates
+     that the bus driver has not been properly signed. Click
+     <span class="guimenu">Yes</span> to continue the installation.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Upgrading the Linux<sup>*</sup> kernel of the virtual
+     machine host without upgrading the driver pack at the same time.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Installing or uninstalling the driver pack by any other process than what
+     is documented in this guide (see
+     <a class="xref" href="index.html#sec-vmdp-driver-uninstall" title="3.7. Uninstalling the Driver Pack">Section 3.7, “Uninstalling the Driver Pack”</a>
+     and
+     <a class="xref" href="index.html#sec-vmdp-driver-uninstall" title="3.7. Uninstalling the Driver Pack">Section 3.7, “Uninstalling the Driver Pack”</a>).
+    </p>
+   </li></ul></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-best-before"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-best-before"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Before the Installation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-best-before">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best-before</li></ul></div></div></div></div>
+  
+  <p>
+   Before installing SUSE Linux Enterprise Virtual Machine Driver Pack in your production
+   environment, we strongly recommend that you run it in a test environment to
+   ensure that it functions properly with your system.
+  </p>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-best-network"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-best-network"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Configuration</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-best-network">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best-network</li></ul></div></div></div></div>
+  
+  <p>
+   Do not give the server a fixed IP address before installing the driver pack,
+   otherwise you need to switch to a different intermediate IP address before
+   finishing the installation.
+  </p>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-setup-expert"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-setup-expert"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Installation Options</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-setup-expert">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert</li></ul></div></div></div></div>
+ 
+
+ <p>
+  How to deal with SLE-VMDP <span class="emphasis"><em>install</em></span> and
+  <span class="emphasis"><em>uninstall</em></span>.
+ </p>
+
+ <div class="sect2 " id="sec-vmdp-setup-expert-install"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-setup-expert-install"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Expert iInstallation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-setup-expert-install">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert-install</li></ul></div></div></div></div>
+  
+  <p>
+   To help with automated installations, <code class="command">setup.exe</code> currently
+   has the following parameters:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     /auto_reboot
+    </p>
+   </li><li class="listitem ">
+    <p>
+     /no_reboot
+    </p>
+   </li><li class="listitem ">
+    <p>
+     /eula_accepted
+    </p>
+   </li><li class="listitem ">
+    <p>
+     /force
+    </p>
+   </li><li class="listitem ">
+    <p>
+     /reset_net_params
+    </p>
+   </li><li class="listitem ">
+    <p>
+     /xen
+    </p>
+   </li><li class="listitem ">
+    <p>
+     /virtio
+    </p>
+   </li></ul></div>
+  <p>
+   The default is to install the drivers for the hypervisor that the VM is
+   currently running on. Howerver, the Xen and virtio drivers can be installed
+   at the same time if both the <code class="option">/xen</code> and
+   <code class="option">/virtio</code> parameters are given.
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <code class="option">/auto_reboot</code>: will cause the Windows* VM to automatically
+     reboot after the setup has completed
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/no_reboot</code>: will prevent the reboot prompt from being
+     displayed after the setup has completed
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/eula_accepted</code>: implies that the EULA has been read,
+     accepted, and agreed to in all aspects. Accepting the EULA in this manner
+     will therefore prevent the EULA acceptance dialog from being displayed
+     during the setup process.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/force</code>: will force the installation of the drivers and
+     overwrite any previous drivers that may have been installed
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/reset_net_params</code>: will remove any net driver parameters
+     that are still set to the default values. This is useful in upgrades when
+     a net driver's parameter default changes. This will allow the new default
+     to be used
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/xen</code>: will install the Xen drivers
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/virtio</code>: will install the virtio drivers
+    </p>
+   </li></ul></div>
+  <p>
+   Additional options when running on a Xen hypervisor are:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <code class="option">/boot_vscsi</code>: will configure the Windows* VM to boot off a
+     supplied SCSI device. To use the <code class="option">/boot_vscsi</code> option, the
+     VM's configuration file must contain a <span class="emphasis"><em>vscsi=</em></span> line
+     and a <span class="emphasis"><em>disk = [phy:/...]</em></span> line
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/xvdisk</code>: tells xenblk to only control disks of type
+     <span class="emphasis"><em>xvd</em></span>
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/netfront</code>: tells xennet to only control NICs of
+     <span class="emphasis"><em>type=netfront</em></span>
+    </p>
+   </li></ul></div>
+  <p>
+   Advanced parameters of the <code class="command">Setup.exe</code> command:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <code class="option">/w2k3, /w2k8, /win7, and /win8 </code>: are mutually exclusive.
+     They allow the specified drivers to be installed in the running operating
+     system, if compatible. These parameters are for testing purposes only and
+     are not supported
+    </p>
+   </li></ul></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-setup-expert-uninstall"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-setup-expert-uninstall"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uninstall Expert Mode</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-setup-expert-uninstall">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert-uninstall</li></ul></div></div></div></div>
+  
+  <p>
+   <span class="emphasis"><em>Uninstall</em></span> has some parameters:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <code class="option">/auto_reboot</code>: will cause the Windows* VM to automatically
+     reboot at the completion of the uninstall
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/virtio</code>: will uninstall virtio drivers
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <code class="option">/xen</code>: will uninstall Xen drivers
+    </p>
+   </li></ul></div>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-step-virt-manager"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-step-virt-manager"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Step-by-Step Installation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-step-virt-manager">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-virt-manager</li></ul></div></div></div></div>
+ 
+
+ <p>
+  This section describes how to configure the Windows* VM under
+  <span class="guimenu">virt-manager</span> and how to install the VMDP while installing
+  Windows* 7. This example is an installation of a KVM host. Using the ISO is
+  only valid on KVM hosts.
+ </p>
+
+ <div class="sect2 " id="sec-vmdp-step-virt-manager-win7"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-step-virt-manager-win7"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Virt-manager for Windows* 7</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-step-virt-manager-win7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-virt-manager-win7</li></ul></div></div></div></div>
+  
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p>
+     The virtio Network interface
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_network_virtio.png"><img src="images/virt-manager_network_virtio.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     The SLE-VMDP Virtual CD-ROM ISO:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_vmdp_iso.png"><img src="images/virt-manager_vmdp_iso.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     The Windows* VM Virtio disk:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_virtio_disk.png"><img src="images/virt-manager_virtio_disk.png" width="" /></a></div>
+    </div>
+   </li><li class="step " id="vmdp-qemu-guest-agent-channel">
+    <p>
+     The Windows* VM Qemu-ga Channel device with Device parameters set to:
+     <span class="emphasis"><em>org.qemu.guest_agent.0</em></span>
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_channel_device.png"><img src="images/virt-manager_channel_device.png" width="" /></a></div>
+    </div>
+   </li></ol></div></div>
+ </div>
+
+ <div class="sect2 " id="sec-vmdp-step-win7-install"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-step-win7-install"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Windows* 7 Installation</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-step-win7-install">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-win7-install</li></ul></div></div></div></div>
+  
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p>
+     Boot the Windows* 7 installation CD-ROM. The <span class="guimenu">Select driver to be
+     installed</span> dialog will be displayed:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_select.png"><img src="images/vmdp_install_windows_select.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     Browse to the directory that contains the SLE-VMDP driver:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_from_cd.png"><img src="images/vmdp_install_windows_from_cd.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     Select the SUSE driver:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_suse_block_driver.png"><img src="images/vmdp_install_windows_suse_block_driver.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     Finish the installation of Windows* 7.
+    </p>
+   </li><li class="step ">
+    <p>
+     On first boot, go to the directory which contains the SLE-VMDP driver (this
+     should be a CD-ROM as defined in virt-manager). The
+     <code class="command">VMDP-xxx.exe</code> needs to be copied from the CD (ISO) onto
+     the hard disk and expanded. Then double-click the
+     <code class="command">Setup.exe</code> program.
+    </p>
+    <p>
+     A pop-up window will appear.
+    </p>
+   </li><li class="step ">
+    <p>
+     To confirm the action, click <span class="guimenu">Yes</span>:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_signed_driver.png"><img src="images/vmdp_signed_driver.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     Accept the End User License Agreement:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_accept_eula.png"><img src="images/vmdp_accept_eula.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     The program will install the SUSE Drivers for Windows* 7:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmpd_installation_in_progress.png"><img src="images/vmpd_installation_in_progress.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     Restart your computer:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_computer_restart.png"><img src="images/vmdp_computer_restart.png" width="" /></a></div>
+    </div>
+   </li><li class="step ">
+    <p>
+     Use the Windows device manager to check if all drivers have been
+     successfully installed:
+    </p>
+    <div class="informalfigure">
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_driver_installed_device_manager.png"><img src="images/vmdp_driver_installed_device_manager.png" width="" /></a></div>
+    </div>
+   </li></ol></div></div>
+ </div>
+</div>
+
+ <div class="sect1 " id="sec-vmdp-legal"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-legal"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Legal Notice</span> <a title="Permalink" class="permalink" href="index.html#sec-vmdp-legal">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_copyright_sle.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-legal</li></ul></div></div></div></div>
+ 
+
+ <p>
+  All content is copyright 2006-
+2020
+
+  SUSE®, Inc. All rights reserved.
+ </p>
+
+ <p>
+  Legal Notice
+ </p>
+
+ <p>
+  This manual is protected under SUSE® intellectual property rights. By
+  reproducing, duplicating or distributing this manual you explicitly agree to
+  conform to the terms and conditions of this license agreement.
+ </p>
+
+ <p>
+  This manual may be freely reproduced, duplicated and distributed either as
+  such or as part of a bundled package in electronic and/or printed format,
+  provided however that the following conditions are fulfilled:
+ </p>
+
+ <table border="0" summary="Simple list" class="simplelist "><tr><td>
+   That this copyright notice and the names of authors and contributors appear
+   clearly and distinctively on all reproduced, duplicated and distributed
+   copies. That this manual, specifically for the printed format, is reproduced
+   and/or distributed for noncommercial use only. The express authorization of
+   SUSE®, Inc must be obtained prior to any other use of any manual or part
+   thereof.
+  </td></tr></table>
+
+ <p>
+  For SUSE® trademarks, see the SUSE® Trademark and Service Mark
+  list
+  <a class="ulink" href="https://www.suse.com/company/legal/" target="_blank">https://www.suse.com/company/legal/<span class="ulink-url"> (https://www.suse.com/company/legal/)</span></a>.
+  * Linux is a registered trademark of Linus Torvalds. All other third party
+  trademarks are the property of their respective owners. A trademark symbol
+  denotes a SUSE® trademark; an asterisk (*) denotes a third party
+  trademark.
+ </p>
+
+ <p>
+  All information found in this book has been compiled with utmost attention to
+  detail. However, this does not guarantee complete accuracy. Neither
+  SUSE®, Inc., SUSE® LINUX Products GmbH, the authors, nor the
+  translators shall be held liable for possible errors or the consequences
+  thereof.
+ </p>
+</div>
+
+ <div class="sect1 " id="id-1.12"><div class="titlepage"><div><div><h2 class="title" id="id-1.12"><span class="number">10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="index.html#id-1.12">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_gfdl1.2_i.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+
+ 
+
+ <p>
+  Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin St,
+  Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy and
+  distribute verbatim copies of this license document, but changing it is not
+  allowed.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.4"><span class="name">
+    0. PREAMBLE
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.4">#</a></h5></div>
+
+ <p>
+  The purpose of this License is to make a manual, textbook, or other
+  functional and useful document "free" in the sense of freedom: to assure
+  everyone the effective freedom to copy and redistribute it, with or without
+  modifying it, either commercially or non-commercially. Secondarily, this
+  License preserves for the author and publisher a way to get credit for their
+  work, while not being considered responsible for modifications made by
+  others.
+ </p>
+
+ <p>
+  This License is a kind of "copyleft", which means that derivative works of
+  the document must themselves be free in the same sense. It complements the
+  GNU General Public License, which is a copyleft license designed for free
+  software.
+ </p>
+
+ <p>
+  We have designed this License to use it for manuals for free software,
+  because free software needs free documentation: a free program should come
+  with manuals providing the same freedoms that the software does. But this
+  License is not limited to software manuals; it can be used for any textual
+  work, regardless of subject matter or whether it is published as a printed
+  book. We recommend this License principally for works whose purpose is
+  instruction or reference.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.8"><span class="name">
+    1. APPLICABILITY AND DEFINITIONS
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.8">#</a></h5></div>
+
+ <p>
+  This License applies to any manual or other work, in any medium, that
+  contains a notice placed by the copyright holder saying it can be distributed
+  under the terms of this License. Such a notice grants a world-wide,
+  royalty-free license, unlimited in duration, to use that work under the
+  conditions stated herein. The "Document", below, refers to any such manual or
+  work. Any member of the public is a licensee, and is addressed as "you". You
+  accept the license if you copy, modify or distribute the work in a way
+  requiring permission under copyright law.
+ </p>
+
+ <p>
+  A "Modified Version" of the Document means any work containing the Document
+  or a portion of it, either copied verbatim, or with modifications and/or
+  translated into another language.
+ </p>
+
+ <p>
+  A "Secondary Section" is a named appendix or a front-matter section of the
+  Document that deals exclusively with the relationship of the publishers or
+  authors of the Document to the Document's overall subject (or to related
+  matters) and contains nothing that could fall directly within that overall
+  subject. (Thus, if the Document is in part a textbook of mathematics, a
+  Secondary Section may not explain any mathematics.) The relationship could be
+  a matter of historical connection with the subject or with related matters,
+  or of legal, commercial, philosophical, ethical or political position
+  regarding them.
+ </p>
+
+ <p>
+  The "Invariant Sections" are certain Secondary Sections whose titles are
+  designated, as being those of Invariant Sections, in the notice that says
+  that the Document is released under this License. If a section does not fit
+  the above definition of Secondary then it is not allowed to be designated as
+  Invariant. The Document may contain zero Invariant Sections. If the Document
+  does not identify any Invariant Sections then there are none.
+ </p>
+
+ <p>
+  The "Cover Texts" are certain short passages of text that are listed, as
+  Front-Cover Texts or Back-Cover Texts, in the notice that says that the
+  Document is released under this License. A Front-Cover Text may be at most 5
+  words, and a Back-Cover Text may be at most 25 words.
+ </p>
+
+ <p>
+  A "Transparent" copy of the Document means a machine-readable copy,
+  represented in a format whose specification is available to the general
+  public, that is suitable for revising the document straightforwardly with
+  generic text editors or (for images composed of pixels) generic paint
+  programs or (for drawings) some widely available drawing editor, and that is
+  suitable for input to text formatters or for automatic translation to a
+  variety of formats suitable for input to text formatters. A copy made in an
+  otherwise Transparent file format whose markup, or absence of markup, has
+  been arranged to thwart or discourage subsequent modification by readers is
+  not Transparent. An image format is not Transparent if used for any
+  substantial amount of text. A copy that is not "Transparent" is called
+  "Opaque".
+ </p>
+
+ <p>
+  Examples of suitable formats for Transparent copies include plain ASCII
+  without markup, Texinfo input format, LaTeX input format, SGML or XML using a
+  publicly available DTD, and standard-conforming simple HTML, PostScript or
+  PDF designed for human modification. Examples of transparent image formats
+  include PNG, XCF and JPG. Opaque formats include proprietary formats that can
+  be read and edited only by proprietary word processors, SGML or XML for which
+  the DTD and/or processing tools are not generally available, and the
+  machine-generated HTML, PostScript or PDF produced by some word processors
+  for output purposes only.
+ </p>
+
+ <p>
+  The "Title Page" means, for a printed book, the title page itself, plus such
+  following pages as are needed to hold, legibly, the material this License
+  requires to appear in the title page. For works in formats which do not have
+  any title page as such, "Title Page" means the text near the most prominent
+  appearance of the work's title, preceding the beginning of the body of the
+  text.
+ </p>
+
+ <p>
+  A section "Entitled XYZ" means a named subunit of the Document whose title
+  either is precisely XYZ or contains XYZ in parentheses following text that
+  translates XYZ in another language. (Here XYZ stands for a specific section
+  name mentioned below, such as "Acknowledgements", "Dedications",
+  "Endorsements", or "History".) To "Preserve the Title" of such a section when
+  you modify the Document means that it remains a section "Entitled XYZ"
+  according to this definition.
+ </p>
+
+ <p>
+  The Document may include Warranty Disclaimers next to the notice which states
+  that this License applies to the Document. These Warranty Disclaimers are
+  considered to be included by reference in this License, but only as regards
+  disclaiming warranties: any other implication that these Warranty Disclaimers
+  may have is void and has no effect on the meaning of this License.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.19"><span class="name">
+    2. VERBATIM COPYING
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.19">#</a></h5></div>
+
+ <p>
+  You may copy and distribute the Document in any medium, either commercially
+  or non-commercially, provided that this License, the copyright notices, and
+  the license notice saying this License applies to the Document are reproduced
+  in all copies, and that you add no other conditions whatsoever to those of
+  this License. You may not use technical measures to obstruct or control the
+  reading or further copying of the copies you make or distribute. However, you
+  may accept compensation in exchange for copies. If you distribute a large
+  enough number of copies you must also follow the conditions in section 3.
+ </p>
+
+ <p>
+  You may also lend copies, under the same conditions stated above, and you may
+  publicly display copies.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.22"><span class="name">
+    3. COPYING IN QUANTITY
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.22">#</a></h5></div>
+
+ <p>
+  If you publish printed copies (or copies in media that commonly have printed
+  covers) of the Document, numbering more than 100, and the Document's license
+  notice requires Cover Texts, you must enclose the copies in covers that
+  carry, clearly and legibly, all these Cover Texts: Front-Cover Texts on the
+  front cover, and Back-Cover Texts on the back cover. Both covers must also
+  clearly and legibly identify you as the publisher of these copies. The front
+  cover must present the full title with all words of the title equally
+  prominent and visible. You may add other material on the covers in addition.
+  Copying with changes limited to the covers, as long as they preserve the
+  title of the Document and satisfy these conditions, can be treated as
+  verbatim copying in other respects.
+ </p>
+
+ <p>
+  If the required texts for either cover are too voluminous to fit legibly, you
+  should put the first ones listed (as many as fit reasonably) on the actual
+  cover, and continue the rest onto adjacent pages.
+ </p>
+
+ <p>
+  If you publish or distribute Opaque copies of the Document numbering more
+  than 100, you must either include a machine-readable Transparent copy along
+  with each Opaque copy, or state in or with each Opaque copy a
+  computer-network location from which the general network-using public has
+  access to download using public-standard network protocols a complete
+  Transparent copy of the Document, free of added material. If you use the
+  latter option, you must take reasonably prudent steps, when you begin
+  distribution of Opaque copies in quantity, to ensure that this Transparent
+  copy will remain thus accessible at the stated location until at least one
+  year after the last time you distribute an Opaque copy (directly or through
+  your agents or retailers) of that edition to the public.
+ </p>
+
+ <p>
+  It is requested, but not required, that you contact the authors of the
+  Document well before redistributing any large number of copies, to give them
+  a chance to provide you with an updated version of the Document.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.27"><span class="name">
+    4. MODIFICATIONS
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.27">#</a></h5></div>
+
+ <p>
+  You may copy and distribute a Modified Version of the Document under the
+  conditions of sections 2 and 3 above, provided that you release the Modified
+  Version under precisely this License, with the Modified Version filling the
+  role of the Document, thus licensing distribution and modification of the
+  Modified Version to whoever possesses a copy of it. In addition, you must do
+  these things in the Modified Version:
+ </p>
+
+ <div class="orderedlist "><ol class="orderedlist" type="A"><li class="listitem ">
+   <p>
+    Use in the Title Page (and on the covers, if any) a title distinct from
+    that of the Document, and from those of previous versions (which should, if
+    there were any, be listed in the History section of the Document). You may
+    use the same title as a previous version if the original publisher of that
+    version gives permission.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    List on the Title Page, as authors, one or more persons or entities
+    responsible for authorship of the modifications in the Modified Version,
+    together with at least five of the principal authors of the Document (all
+    of its principal authors, if it has fewer than five), unless they release
+    you from this requirement.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    State on the Title page the name of the publisher of the Modified Version,
+    as the publisher.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Preserve all the copyright notices of the Document.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Add an appropriate copyright notice for your modifications adjacent to the
+    other copyright notices.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Include, immediately after the copyright notices, a license notice giving
+    the public permission to use the Modified Version under the terms of this
+    License, in the form shown in the Addendum below.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Preserve in that license notice the full lists of Invariant Sections and
+    required Cover Texts given in the Document's license notice.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Include an unaltered copy of this License.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Preserve the section Entitled "History", Preserve its Title, and add to it
+    an item stating at least the title, year, new authors, and publisher of the
+    Modified Version as given on the Title Page. If there is no section
+    Entitled "History" in the Document, create one stating the title, year,
+    authors, and publisher of the Document as given on its Title Page, then add
+    an item describing the Modified Version as stated in the previous sentence.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Preserve the network location, if any, given in the Document for public
+    access to a Transparent copy of the Document, and likewise the network
+    locations given in the Document for previous versions it was based on.
+    These may be placed in the "History" section. You may omit a network
+    location for a work that was published at least four years before the
+    Document itself, or if the original publisher of the version it refers to
+    gives permission.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    For any section Entitled "Acknowledgements" or "Dedications", Preserve the
+    Title of the section, and preserve in the section all the substance and
+    tone of each of the contributor acknowledgements and/or dedications given
+    therein.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Preserve all the Invariant Sections of the Document, unaltered in their
+    text and in their titles. Section numbers or the equivalent are not
+    considered part of the section titles.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Delete any section Entitled "Endorsements". Such a section may not be
+    included in the Modified Version.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Do not retitle any existing section to be Entitled "Endorsements" or to
+    conflict in title with any Invariant Section.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Preserve any Warranty Disclaimers.
+   </p>
+  </li></ol></div>
+
+ <p>
+  If the Modified Version includes new front-matter sections or appendices that
+  qualify as Secondary Sections and contain no material copied from the
+  Document, you may at your option designate some or all of these sections as
+  invariant. To do this, add their titles to the list of Invariant Sections in
+  the Modified Version's license notice. These titles must be distinct from any
+  other section titles.
+ </p>
+
+ <p>
+  You may add a section Entitled "Endorsements", provided it contains nothing
+  but endorsements of your Modified Version by various parties--for example,
+  statements of peer review or that the text has been approved by an
+  organization as the authoritative definition of a standard.
+ </p>
+
+ <p>
+  You may add a passage of up to five words as a Front-Cover Text, and a
+  passage of up to 25 words as a Back-Cover Text, to the end of the list of
+  Cover Texts in the Modified Version. Only one passage of Front-Cover Text and
+  one of Back-Cover Text may be added by (or through arrangements made by) any
+  one entity. If the Document already includes a cover text for the same cover,
+  previously added by you or by arrangement made by the same entity you are
+  acting on behalf of, you may not add another; but you may replace the old
+  one, on explicit permission from the previous publisher that added the old
+  one.
+ </p>
+
+ <p>
+  The author(s) and publisher(s) of the Document do not by this License give
+  permission to use their names for publicity for or to assert or imply
+  endorsement of any Modified Version.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.34"><span class="name">
+    5. COMBINING DOCUMENTS
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.34">#</a></h5></div>
+
+ <p>
+  You may combine the Document with other documents released under this
+  License, under the terms defined in section 4 above for modified versions,
+  provided that you include in the combination all of the Invariant Sections of
+  all of the original documents, unmodified, and list them all as Invariant
+  Sections of your combined work in its license notice, and that you preserve
+  all their Warranty Disclaimers.
+ </p>
+
+ <p>
+  The combined work need only contain one copy of this License, and multiple
+  identical Invariant Sections may be replaced with a single copy. If there are
+  multiple Invariant Sections with the same name but different contents, make
+  the title of each such section unique by adding at the end of it, in
+  parentheses, the name of the original author or publisher of that section if
+  known, or else a unique number. Make the same adjustment to the section
+  titles in the list of Invariant Sections in the license notice of the
+  combined work.
+ </p>
+
+ <p>
+  In the combination, you must combine any sections Entitled "History" in the
+  various original documents, forming one section Entitled "History"; likewise
+  combine any sections Entitled "Acknowledgements", and any sections Entitled
+  "Dedications". You must delete all sections Entitled "Endorsements".
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.38"><span class="name">
+    6. COLLECTIONS OF DOCUMENTS
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.38">#</a></h5></div>
+
+ <p>
+  You may make a collection consisting of the Document and other documents
+  released under this License, and replace the individual copies of this
+  License in the various documents with a single copy that is included in the
+  collection, provided that you follow the rules of this License for verbatim
+  copying of each of the documents in all other respects.
+ </p>
+
+ <p>
+  You may extract a single document from such a collection, and distribute it
+  individually under this License, provided you insert a copy of this License
+  into the extracted document, and follow this License in all other respects
+  regarding verbatim copying of that document.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.41"><span class="name">
+    7. AGGREGATION WITH INDEPENDENT WORKS
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.41">#</a></h5></div>
+
+ <p>
+  A compilation of the Document or its derivatives with other separate and
+  independent documents or works, in or on a volume of a storage or
+  distribution medium, is called an "aggregate" if the copyright resulting from
+  the compilation is not used to limit the legal rights of the compilation's
+  users beyond what the individual works permit. When the Document is included
+  in an aggregate, this License does not apply to the other works in the
+  aggregate which are not themselves derivative works of the Document.
+ </p>
+
+ <p>
+  If the Cover Text requirement of section 3 is applicable to these copies of
+  the Document, then if the Document is less than one half of the entire
+  aggregate, the Document's Cover Texts may be placed on covers that bracket
+  the Document within the aggregate, or the electronic equivalent of covers if
+  the Document is in electronic form. Otherwise they must appear on printed
+  covers that bracket the whole aggregate.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.44"><span class="name">
+    8. TRANSLATION
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.44">#</a></h5></div>
+
+ <p>
+  Translation is considered a kind of modification, so you may distribute
+  translations of the Document under the terms of section 4. Replacing
+  Invariant Sections with translations requires special permission from their
+  copyright holders, but you may include translations of some or all Invariant
+  Sections in addition to the original versions of these Invariant Sections.
+  You may include a translation of this License, and all the license notices in
+  the Document, and any Warranty Disclaimers, provided that you also include
+  the original English version of this License and the original versions of
+  those notices and disclaimers. In case of a disagreement between the
+  translation and the original version of this License or a notice or
+  disclaimer, the original version will prevail.
+ </p>
+
+ <p>
+  If a section in the Document is Entitled "Acknowledgements", "Dedications",
+  or "History", the requirement (section 4) to Preserve its Title (section 1)
+  will typically require changing the actual title.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.47"><span class="name">
+    9. TERMINATION
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.47">#</a></h5></div>
+
+ <p>
+  You may not copy, modify, sublicense, or distribute the Document except as
+  expressly provided for under this License. Any other attempt to copy, modify,
+  sublicense or distribute the Document is void, and will automatically
+  terminate your rights under this License. However, parties who have received
+  copies, or rights, from you under this License will not have their licenses
+  terminated so long as such parties remain in full compliance.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.49"><span class="name">
+    10. FUTURE REVISIONS OF THIS LICENSE
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.49">#</a></h5></div>
+
+ <p>
+  The Free Software Foundation may publish new, revised versions of the GNU
+  Free Documentation License from time to time. Such new versions will be
+  similar in spirit to the present version, but may differ in detail to address
+  new problems or concerns. See
+  <a class="ulink" href="http://www.gnu.org/copyleft/" target="_blank">http://www.gnu.org/copyleft/<span class="ulink-url"> (http://www.gnu.org/copyleft/)</span></a>.
+ </p>
+
+ <p>
+  Each version of the License is given a distinguishing version number. If the
+  Document specifies that a particular numbered version of this License "or any
+  later version" applies to it, you have the option of following the terms and
+  conditions either of that specified version or of any later version that has
+  been published (not as a draft) by the Free Software Foundation. If the
+  Document does not specify a version number of this License, you may choose
+  any version ever published (not as a draft) by the Free Software Foundation.
+ </p>
+
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.12.52"><span class="name">
+    ADDENDUM: How to use this License for your documents
+  </span><a title="Permalink" class="permalink" href="index.html#id-1.12.52">#</a></h5></div>
+
+<div class="verbatim-wrap"><pre class="screen">Copyright (c) YEAR YOUR NAME.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled “GNU
+Free Documentation License”.</pre></div>
+
+ <p>
+  If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+  replace the “with...Texts.” line with this:
+ </p>
+
+<div class="verbatim-wrap"><pre class="screen">with the Invariant Sections being LIST THEIR TITLES, with the
+Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</pre></div>
+
+ <p>
+  If you have Invariant Sections without Cover Texts, or some other combination
+  of the three, merge those two alternatives to suit the situation.
+ </p>
+
+ <p>
+  If your document contains nontrivial examples of program code, we recommend
+  releasing these examples in parallel under your choice of free software
+  license, such as the GNU General Public License, to permit their use in free
+  software.
+ </p>
+</div>
+</div></div><div class="page-bottom"><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
