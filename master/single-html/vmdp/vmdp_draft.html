@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installation Guide | SUSE Linux Enterprise Virtual Machine Driver Pack 2.5</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets 1.78.1)" /><meta name="product-name" content="SUSE Linux Enterprise Virtual Machine Driver Pack" /><meta name="product-number" content="2.5" /><meta name="book-title" content="Installation Guide" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installation Guide | SUSE Linux Enterprise Virtual Machine Driver Pack 2.5</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets snapshot)" /><meta name="product-name" content="SUSE Linux Enterprise Virtual Machine Driver Pack" /><meta name="product-number" content="2.5" /><meta name="book-title" content="Installation Guide" /><meta name="description" content="SUSE Linux Enterprise Virtual Machine Driver Pack contains Windows* disk and network device drivers to enable the high-performance hosting of these unmodified guest operating systems on top of SUSE Linux Enterprise Server. Paravirtualized drivers for SUSE Linux Enterprise Server are available, but n…" />
+<script type="text/javascript">
 
-var protocol = window.location.protocol.toLowerCase();
-if ( protocol != 'file:' ) {
-  var agent = navigator.userAgent.toLowerCase();
-  var wanted = ( protocol == 'https:') ? 'https' : 'http';
-  var file = 'fonts.css';
-  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
 }
 else {
-   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -23,10 +20,10 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft single offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs inactive"><a class="single-crumb" href="#article-vmdp-driver" accesskey="c"><span class="single-contents-icon"></span>Installation Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs inactive"><a class="single-crumb" href="#article-vmdp-driver" accesskey="c"><span class="single-contents-icon"></span>Show Contents: Installation Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="#sec-vmdp-drivers-vdmp"><span class="number">1 </span><span class="name">About SLE-VMDP</span></a></li><li class="inactive"><a href="#sec-vmdp-certification"><span class="number">2 </span><span class="name">SLE-VMDP Certification</span></a></li><li class="inactive"><a href="#sec-vmdp-driver-installation"><span class="number">3 </span><span class="name">General Installation</span></a></li><li class="inactive"><a href="#sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span class="name">QEMU Guest Agent</span></a></li><li class="inactive"><a href="#sec-vmdp-v2v-intro"><span class="number">5 </span><span class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span></a></li><li class="inactive"><a href="#sec-vmdp-best"><span class="number">6 </span><span class="name">Best Practices</span></a></li><li class="inactive"><a href="#sec-vmdp-setup-expert"><span class="number">7 </span><span class="name">Advanced Installation Options</span></a></li><li class="inactive"><a href="#sec-vmdp-step-virt-manager"><span class="number">8 </span><span class="name">Step-by-Step Installation</span></a></li><li class="inactive"><a href="#sec-vmdp-legal"><span class="number">9 </span><span class="name">Legal Notice</span></a></li><li class="inactive"><a href="#id-1.12"><span class="number">10 </span><span class="name">GNU Free Documentation License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="article-vmdp-driver" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname">SUSE Linux Enterprise Virtual Machine Driver Pack</span> <span class="productnumber">2.5</span></h6><div><h1 class="title">Installation Guide <a title="Permalink" class="permalink" href="#article-vmdp-driver">#</a></h1></div><div class="date"><span class="imprint-label">Publication Date: </span>02/03/2020</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-vmdp-drivers-vdmp"><span class="number">1 </span><span class="name">About SLE-VMDP</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-certification"><span class="number">2 </span><span class="name">SLE-VMDP Certification</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-driver-installation"><span class="number">3 </span><span class="name">General Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span class="name">QEMU Guest Agent</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-v2v-intro"><span class="number">5 </span><span class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-best"><span class="number">6 </span><span class="name">Best Practices</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-setup-expert"><span class="number">7 </span><span class="name">Advanced Installation Options</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-step-virt-manager"><span class="number">8 </span><span class="name">Step-by-Step Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-legal"><span class="number">9 </span><span class="name">Legal Notice</span></a></span></dt><dt><span class="sect1"><a href="#id-1.12"><span class="number">10 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div>
+</script></head><body class="draft single offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs inactive"><a class="single-crumb" href="#article-vmdp-driver" accesskey="c"><span class="single-contents-icon"></span>Installation Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs inactive"><a class="single-crumb" href="#article-vmdp-driver" accesskey="c"><span class="single-contents-icon"></span>Show Contents: Installation Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="#sec-vmdp-drivers-vdmp"><span class="number">1 </span><span class="name">About SLE-VMDP</span></a></li><li class="inactive"><a href="#sec-vmdp-certification"><span class="number">2 </span><span class="name">SLE-VMDP Certification</span></a></li><li class="inactive"><a href="#sec-vmdp-driver-installation"><span class="number">3 </span><span class="name">General Installation</span></a></li><li class="inactive"><a href="#sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span class="name">QEMU Guest Agent</span></a></li><li class="inactive"><a href="#sec-vmdp-v2v-intro"><span class="number">5 </span><span class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span></a></li><li class="inactive"><a href="#sec-vmdp-best"><span class="number">6 </span><span class="name">Best Practices</span></a></li><li class="inactive"><a href="#sec-vmdp-setup-expert"><span class="number">7 </span><span class="name">Advanced Installation Options</span></a></li><li class="inactive"><a href="#sec-vmdp-step-virt-manager"><span class="number">8 </span><span class="name">Step-by-Step Installation</span></a></li><li class="inactive"><a href="#sec-vmdp-legal"><span class="number">9 </span><span class="name">Legal Notice</span></a></li><li class="inactive"><a href="#id-1.12"><span class="number">10 </span><span class="name">GNU Free Documentation License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="article-vmdp-driver" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname ">SUSE Linux Enterprise Virtual Machine Driver Pack</span> <span class="productnumber ">2.5</span></h6><div><h1 class="title">Installation Guide <a title="Permalink" class="permalink" href="#article-vmdp-driver">#</a></h1></div><div class="date"><span class="imprint-label">Publication Date: </span>05/22/2020</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-vmdp-drivers-vdmp"><span class="number">1 </span><span class="name">About SLE-VMDP</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-certification"><span class="number">2 </span><span class="name">SLE-VMDP Certification</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-driver-installation"><span class="number">3 </span><span class="name">General Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span class="name">QEMU Guest Agent</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-v2v-intro"><span class="number">5 </span><span class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-best"><span class="number">6 </span><span class="name">Best Practices</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-setup-expert"><span class="number">7 </span><span class="name">Advanced Installation Options</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-step-virt-manager"><span class="number">8 </span><span class="name">Step-by-Step Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-vmdp-legal"><span class="number">9 </span><span class="name">Legal Notice</span></a></span></dt><dt><span class="sect1"><a href="#id-1.12"><span class="number">10 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div>
  
  
- <div class="sect1 " id="sec-vmdp-drivers-vdmp"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-drivers-vdmp"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">About SLE-VMDP</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-vdmp">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-vdmp</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-drivers-vdmp"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">About SLE-VMDP</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-vdmp">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-vdmp</li></ul></div></div></div></div>
   
 
   <p>
@@ -39,7 +36,7 @@ hljs.configure({
    and corresponding Customer Center update channels.
   </p>
 
-  <div class="sect2 " id="sec-vmdp-drivers-introduction"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-introduction"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-introduction">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-introduction</li></ul></div></div></div></div>
+  <div class="sect2 " id="sec-vmdp-drivers-introduction"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-introduction">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-introduction</li></ul></div></div></div></div>
    
    <p>
     Virtualization allows the consolidation of Linux workloads on newer, more
@@ -54,7 +51,7 @@ hljs.configure({
    </p>
   </div>
 
-  <div class="sect2 " id="sec-vmdp-drivers-performance"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-performance"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Bringing Performance</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-performance">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-performance</li></ul></div></div></div></div>
+  <div class="sect2 " id="sec-vmdp-drivers-performance"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Bringing Performance</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-performance">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-performance</li></ul></div></div></div></div>
    
    <p>
     The device drivers in SUSE Linux Enterprise Virtual Machine Driver Pack bring many of
@@ -70,7 +67,7 @@ hljs.configure({
    </p>
   </div>
 
-  <div class="sect2 " id="sec-vmdp-drivers-subscription"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-subscription"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support Subscription</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-subscription">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-subscription</li></ul></div></div></div></div>
+  <div class="sect2 " id="sec-vmdp-drivers-subscription"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support Subscription</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-subscription">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-subscription</li></ul></div></div></div></div>
    
    <p>
     The customer support you receive for the SUSE Linux Enterprise Virtual Machine Driver Pack is at the same level
@@ -79,7 +76,7 @@ hljs.configure({
     support subscription<span class="ulink-url"> (https://www.suse.com/support/programs/subscriptions/)</span></a>.
    </p>
   </div>
-  <div class="sect2 " id="sec-vmdp-drivers-whatsnew"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-drivers-whatsnew"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What's New in 2.5</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-whatsnew">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-whatsnew</li></ul></div></div></div></div>
+  <div class="sect2 " id="sec-vmdp-drivers-whatsnew"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What's New in 2.5</span> <a title="Permalink" class="permalink" href="#sec-vmdp-drivers-whatsnew">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>MAIN.VMDP.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-drivers-whatsnew</li></ul></div></div></div></div>
     
     <p>
       The key update in version 2.5 are:
@@ -98,7 +95,7 @@ hljs.configure({
   </div>
  </div>
 
- <div class="sect1 " id="sec-vmdp-certification"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-certification"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP Certification</span> <a title="Permalink" class="permalink" href="#sec-vmdp-certification">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-certification"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP Certification</span> <a title="Permalink" class="permalink" href="#sec-vmdp-certification">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification</li></ul></div></div></div></div>
  
 
  <p>
@@ -106,7 +103,7 @@ hljs.configure({
   <a class="ulink" href="http://www.windowsservercatalog.com/item.aspx?idItem=979ea66f-7f52-a04c-df5b-88ecc4dfa5b0&amp;bCatID=1282" target="_blank">http://www.windowsservercatalog.com/item.aspx?idItem=979ea66f-7f52-a04c-df5b-88ecc4dfa5b0&amp;bCatID=1282</a>
  </p>
 
- <div class="sect2 " id="sec-vmdp-certification-whql"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-certification-whql"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">WHQL</span> <a title="Permalink" class="permalink" href="#sec-vmdp-certification-whql">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification-whql</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-certification-whql"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">WHQL</span> <a title="Permalink" class="permalink" href="#sec-vmdp-certification-whql">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification-whql</li></ul></div></div></div></div>
   
   <p>
    SLE-VMDP has passed WHQL certification. See
@@ -115,7 +112,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-certification-svvp"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-certification-svvp"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SVVP</span> <a title="Permalink" class="permalink" href="#sec-vmdp-certification-svvp">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification-svvp</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-certification-svvp"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SVVP</span> <a title="Permalink" class="permalink" href="#sec-vmdp-certification-svvp">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_certification.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-certification-svvp</li></ul></div></div></div></div>
   
   <p>
    The SVVP program has validated our SLE-VMDP paravirtualized drivers. Thus,
@@ -128,7 +125,7 @@ hljs.configure({
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-driver-installation"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-driver-installation"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-installation</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-driver-installation"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-installation</li></ul></div></div></div></div>
  
 
  <p>
@@ -139,7 +136,7 @@ hljs.configure({
   Windows* 2008 and newer that may be used for VMs running on KVM.
  </p>
 
- <div class="sect2 " id="sec-vmdp-driver-prerequisites"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-prerequisites"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-prerequisites">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-prerequisites</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-prerequisites"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-prerequisites">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-prerequisites</li></ul></div></div></div></div>
   
   <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
     <p>
@@ -152,7 +149,7 @@ hljs.configure({
    </li></ul></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-setup-exe"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-setup-exe"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setup.exe Installation Instructions for KVM and Xen</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-setup-exe">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-setup-exe</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-setup-exe"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setup.exe Installation Instructions for KVM and Xen</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-setup-exe">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-setup-exe</li></ul></div></div></div></div>
   
   <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
     <p>
@@ -181,7 +178,7 @@ hljs.configure({
    </li></ol></div></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-additionnal-info"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-additionnal-info"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional KVM VirtIO Setup Instructions</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-additionnal-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-additionnal-info</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-additionnal-info"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional KVM VirtIO Setup Instructions</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-additionnal-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-additionnal-info</li></ul></div></div></div></div>
   
   <p>
    <code class="command">Setup.exe</code> can be run with and without VirtIO devices
@@ -195,7 +192,7 @@ hljs.configure({
    To boot a running VM on a VirtIO disk, the VirtIO disk driver must be
    installed on a secondary/temporary (e:) VirtIO disk. After the driver is
    installed and controlling the disk, shut down the VM. From
-   <span class="guimenu">virt-manager</span>, delete the secondary VirtIO disk and delete
+   <span class="guimenu ">virt-manager</span>, delete the secondary VirtIO disk and delete
    the IDE boot disk. Now add a disk of type VirtIO or VirtIO SCSI and give it
    the location for the boot disk. Boot the VM. The VirtIO driver will now be
    controlling the boot disk.
@@ -210,7 +207,7 @@ hljs.configure({
   </div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-install-instruction"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-install-instruction"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation Instructions for <code class="literal">.vfd</code> and <code class="literal">.iso</code></span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-install-instruction">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-install-instruction</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-install-instruction"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation Instructions for <code class="literal">.vfd</code> and <code class="literal">.iso</code></span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-install-instruction">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-install-instruction</li></ul></div></div></div></div>
   
   <p>
    A Windows* VM may attach the SLE-VMDP <span class="emphasis"><em>vfd</em></span> or
@@ -224,7 +221,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-install-at-vm-creation"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-install-at-vm-creation"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">.vfd</code> and <code class="literal">.iso</code> for VirtIO Boot Disk Installation at VM Creation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-install-at-vm-creation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-install-at-vm-creation</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-install-at-vm-creation"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">.vfd</code> and <code class="literal">.iso</code> for VirtIO Boot Disk Installation at VM Creation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-install-at-vm-creation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-install-at-vm-creation</li></ul></div></div></div></div>
   
   <p>
    This method is only used for VMs running on KVM and is used to install the
@@ -258,14 +255,14 @@ hljs.configure({
    </li><li class="step ">
     <p>
      For Windows 2003, at the very beginning of the installation there is an
-     option to press <span class="guimenu">F6</span> for an OEM SCSI disk installation.
-     At that time, press <span class="guimenu">F6</span>. The VirtIO disk driver from the
+     option to press <span class="guimenu ">F6</span> for an OEM SCSI disk installation.
+     At that time, press <span class="guimenu ">F6</span>. The VirtIO disk driver from the
      <span class="emphasis"><em>vfd</em></span> can then be selected and installed.
     </p>
    </li><li class="step ">
     <p>
-     For Windows 2008* and newer, on the <span class="guimenu">Where do you want to install
-     Windows</span> screen, select <span class="guimenu">Load driver</span> and follow
+     For Windows 2008* and newer, on the <span class="guimenu ">Where do you want to install
+     Windows</span> screen, select <span class="guimenu ">Load driver</span> and follow
      the prompts. This will allow the VirtIO disk driver to be installed for
      the boot disk.
     </p>
@@ -284,7 +281,7 @@ hljs.configure({
    </li></ol></div></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-xen-instructions"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-xen-instructions"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional Xen Setup Instructions</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-xen-instructions">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-xen-instructions</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-xen-instructions"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional Xen Setup Instructions</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-xen-instructions">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-xen-instructions</li></ul></div></div></div></div>
   
   <p>
    Setup and the <code class="option">/boot_vscsi</code> option: The Xen SLE-VMDP SCSI driver
@@ -305,7 +302,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-uninstall"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-uninstall"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uninstalling the Driver Pack</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-uninstall">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-uninstall</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-uninstall"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uninstalling the Driver Pack</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-uninstall">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-uninstall</li></ul></div></div></div></div>
   
   <p>
    To uninstall the SUSE Linux Enterprise Virtual Machine Driver Pack, execute the
@@ -321,7 +318,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-upgrade"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-upgrade"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading the Driver Pack</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-upgrade">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-upgrade</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-upgrade"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading the Driver Pack</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-upgrade">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-upgrade</li></ul></div></div></div></div>
   
   <p>
    <code class="command">Setup.exe</code> can be used to update most existing
@@ -357,7 +354,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-recover"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-recover"><span class="number">3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Recovering from a Failure</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-recover">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-recover</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-recover"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Recovering from a Failure</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-recover">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-recover</li></ul></div></div></div></div>
   
   <p>
    If a failure is caused by the driver pack, you can safely remove the driver
@@ -375,7 +372,7 @@ hljs.configure({
    </li></ol></div></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-driver-issue"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-issue"><span class="number">3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Known Issues</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-issue">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-issue</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-issue"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Known Issues</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-issue">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-issue</li></ul></div></div></div></div>
   
   <p>
    For information on known issues for this release, see the README file within
@@ -384,7 +381,7 @@ hljs.configure({
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-qemu-guest-agent"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-qemu-guest-agent"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">QEMU Guest Agent</span> <a title="Permalink" class="permalink" href="#sec-vmdp-qemu-guest-agent">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-qemu-guest-agent</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-qemu-guest-agent"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">QEMU Guest Agent</span> <a title="Permalink" class="permalink" href="#sec-vmdp-qemu-guest-agent">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-qemu-guest-agent</li></ul></div></div></div></div>
  
 
  <p>
@@ -392,7 +389,7 @@ hljs.configure({
   it.
  </p>
 
- <div class="sect2 " id="vmdp-qemu-guest-agent-info"><div class="titlepage"><div><div><h3 class="title" id="vmdp-qemu-guest-agent-info"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Qemu guest agent</span> <a title="Permalink" class="permalink" href="#vmdp-qemu-guest-agent-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>vmdp-qemu-guest-agent-info</li></ul></div></div></div></div>
+ <div class="sect2 " id="vmdp-qemu-guest-agent-info"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Qemu guest agent</span> <a title="Permalink" class="permalink" href="#vmdp-qemu-guest-agent-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>vmdp-qemu-guest-agent-info</li></ul></div></div></div></div>
   
   <p>
    SLE-VMDP setup allows for the installation of the qemu guest agent service for
@@ -416,10 +413,10 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-qemu-guest-agent-installation"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-qemu-guest-agent-installation"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Qemu Guest Agent Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-qemu-guest-agent-installation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-qemu-guest-agent-installation</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-qemu-guest-agent-installation"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Qemu Guest Agent Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-qemu-guest-agent-installation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_qemu_guest_agent.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-qemu-guest-agent-installation</li></ul></div></div></div></div>
   
   <p>
-   Open a <span class="guimenu">cmd.exe</span> from the start menu. Go to the path that
+   Open a <span class="guimenu ">cmd.exe</span> from the start menu. Go to the path that
    contains the <code class="filename">qemu-ga</code> directory. View the help with the
    command <code class="command">qemu-ga.exe</code> <code class="option">--help</code>. To install
    the service use:
@@ -431,12 +428,12 @@ hljs.configure({
   </p>
 <div class="verbatim-wrap"><pre class="screen">net start qemu-ga.exe</pre></div>
   <div class="informalfigure">
-   <div class="mediaobject"><a xmlns="" href="images/vmdp_qemu-ga.png"><img src="images/vmdp_qemu-ga.png" width="" /></a></div>
+   <div class="mediaobject"><a xmlns="" href="images/vmdp_qemu-ga.png" target="_blank"><img src="images/vmdp_qemu-ga.png" width="" /></a></div>
   </div>
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-v2v-intro"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-v2v-intro"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-intro">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-intro</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-v2v-intro"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP and <span class="emphasis"><em>v2v</em></span> Support</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-intro">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-intro</li></ul></div></div></div></div>
  
 
  <p>
@@ -446,7 +443,7 @@ hljs.configure({
   process includes support for the automatic deployment of the SLE-VMDP.
  </p>
 
- <div class="sect2 " id="sec-vmdp-v2v-package"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-v2v-package"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP RPM Package</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-package">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-package</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-v2v-package"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SLE-VMDP RPM Package</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-package">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-package</li></ul></div></div></div></div>
   
   <p>
    The <code class="systemitem">virt-v2v-vmdp</code> RPM is a
@@ -465,7 +462,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-v2v-installation"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-v2v-installation"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">v2v --vmdp Parameter</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-installation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-installation</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-v2v-installation"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">v2v --vmdp Parameter</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-installation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-installation</li></ul></div></div></div></div>
   
   <p>
    Installation of the SLE-VMDP can be manually influenced during virt-v2v
@@ -510,7 +507,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-v2v-official-doc"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-v2v-official-doc"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Xen to KVM Documentation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-official-doc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-official-doc</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-v2v-official-doc"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Xen to KVM Documentation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-v2v-official-doc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_v2v.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-v2v-official-doc</li></ul></div></div></div></div>
   
   <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
     <p>
@@ -531,7 +528,7 @@ hljs.configure({
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-best"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-best"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Best Practices</span> <a title="Permalink" class="permalink" href="#sec-vmdp-best">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-best"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Best Practices</span> <a title="Permalink" class="permalink" href="#sec-vmdp-best">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best</li></ul></div></div></div></div>
  
 
  <p>
@@ -541,7 +538,7 @@ hljs.configure({
 
  
 
- <div class="sect2 " id="sec-vmdp-driver-winwizard-vmdp-problems"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-driver-winwizard-vmdp-problems"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Avoiding Problems with the Drivers</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-winwizard-vmdp-problems">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-winwizard-vmdp-problems</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-driver-winwizard-vmdp-problems"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Avoiding Problems with the Drivers</span> <a title="Permalink" class="permalink" href="#sec-vmdp-driver-winwizard-vmdp-problems">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-driver-winwizard-vmdp-problems</li></ul></div></div></div></div>
   
   <p>
    To avoid problems and potential failure of the device drivers in the driver
@@ -566,7 +563,7 @@ hljs.configure({
     <p>
      Canceling the installation when you see a security alert that indicates
      that the bus driver has not been properly signed. Click
-     <span class="guimenu">Yes</span> to continue the installation.
+     <span class="guimenu ">Yes</span> to continue the installation.
     </p>
    </li><li class="listitem ">
     <p>
@@ -584,7 +581,7 @@ hljs.configure({
    </li></ul></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-best-before"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-best-before"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Before the Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-best-before">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best-before</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-best-before"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Before the Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-best-before">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best-before</li></ul></div></div></div></div>
   
   <p>
    Before installing SUSE Linux Enterprise Virtual Machine Driver Pack in your production
@@ -593,7 +590,7 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect2 " id="sec-vmdp-best-network"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-best-network"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Configuration</span> <a title="Permalink" class="permalink" href="#sec-vmdp-best-network">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best-network</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-best-network"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Configuration</span> <a title="Permalink" class="permalink" href="#sec-vmdp-best-network">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_best_practices.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-best-network</li></ul></div></div></div></div>
   
   <p>
    Do not give the server a fixed IP address before installing the driver pack,
@@ -603,7 +600,7 @@ hljs.configure({
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-setup-expert"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-setup-expert"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Installation Options</span> <a title="Permalink" class="permalink" href="#sec-vmdp-setup-expert">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-setup-expert"><div class="titlepage"><div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Installation Options</span> <a title="Permalink" class="permalink" href="#sec-vmdp-setup-expert">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert</li></ul></div></div></div></div>
  
 
  <p>
@@ -611,7 +608,7 @@ hljs.configure({
   <span class="emphasis"><em>uninstall</em></span>.
  </p>
 
- <div class="sect2 " id="sec-vmdp-setup-expert-install"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-setup-expert-install"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Expert iInstallation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-setup-expert-install">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert-install</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-setup-expert-install"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Expert iInstallation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-setup-expert-install">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert-install</li></ul></div></div></div></div>
   
   <p>
    To help with automated installations, <code class="command">setup.exe</code> currently
@@ -724,7 +721,7 @@ hljs.configure({
    </li></ul></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-setup-expert-uninstall"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-setup-expert-uninstall"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uninstall Expert Mode</span> <a title="Permalink" class="permalink" href="#sec-vmdp-setup-expert-uninstall">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert-uninstall</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-setup-expert-uninstall"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uninstall Expert Mode</span> <a title="Permalink" class="permalink" href="#sec-vmdp-setup-expert-uninstall">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_install_expert.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-setup-expert-uninstall</li></ul></div></div></div></div>
   
   <p>
    <span class="emphasis"><em>Uninstall</em></span> has some parameters:
@@ -746,38 +743,38 @@ hljs.configure({
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-step-virt-manager"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-step-virt-manager"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Step-by-Step Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-step-virt-manager">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-virt-manager</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-step-virt-manager"><div class="titlepage"><div><div><h2 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Step-by-Step Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-step-virt-manager">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-virt-manager</li></ul></div></div></div></div>
  
 
  <p>
   This section describes how to configure the Windows* VM under
-  <span class="guimenu">virt-manager</span> and how to install the VMDP while installing
+  <span class="guimenu ">virt-manager</span> and how to install the VMDP while installing
   Windows* 7. This example is an installation of a KVM host. Using the ISO is
   only valid on KVM hosts.
  </p>
 
- <div class="sect2 " id="sec-vmdp-step-virt-manager-win7"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-step-virt-manager-win7"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Virt-manager for Windows* 7</span> <a title="Permalink" class="permalink" href="#sec-vmdp-step-virt-manager-win7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-virt-manager-win7</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-step-virt-manager-win7"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Virt-manager for Windows* 7</span> <a title="Permalink" class="permalink" href="#sec-vmdp-step-virt-manager-win7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-virt-manager-win7</li></ul></div></div></div></div>
   
   <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
     <p>
      The virtio Network interface
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/virt-manager_network_virtio.png"><img src="images/virt-manager_network_virtio.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_network_virtio.png" target="_blank"><img src="images/virt-manager_network_virtio.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      The SLE-VMDP Virtual CD-ROM ISO:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/virt-manager_vmdp_iso.png"><img src="images/virt-manager_vmdp_iso.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_vmdp_iso.png" target="_blank"><img src="images/virt-manager_vmdp_iso.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      The Windows* VM Virtio disk:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/virt-manager_virtio_disk.png"><img src="images/virt-manager_virtio_disk.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_virtio_disk.png" target="_blank"><img src="images/virt-manager_virtio_disk.png" width="" /></a></div>
     </div>
    </li><li class="step " id="vmdp-qemu-guest-agent-channel">
     <p>
@@ -785,34 +782,34 @@ hljs.configure({
      <span class="emphasis"><em>org.qemu.guest_agent.0</em></span>
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/virt-manager_channel_device.png"><img src="images/virt-manager_channel_device.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/virt-manager_channel_device.png" target="_blank"><img src="images/virt-manager_channel_device.png" width="" /></a></div>
     </div>
    </li></ol></div></div>
  </div>
 
- <div class="sect2 " id="sec-vmdp-step-win7-install"><div class="titlepage"><div><div><h3 class="title" id="sec-vmdp-step-win7-install"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Windows* 7 Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-step-win7-install">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-win7-install</li></ul></div></div></div></div>
+ <div class="sect2 " id="sec-vmdp-step-win7-install"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Windows* 7 Installation</span> <a title="Permalink" class="permalink" href="#sec-vmdp-step-win7-install">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>vmdp_step_by_step.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-step-win7-install</li></ul></div></div></div></div>
   
   <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
     <p>
-     Boot the Windows* 7 installation CD-ROM. The <span class="guimenu">Select driver to be
+     Boot the Windows* 7 installation CD-ROM. The <span class="guimenu ">Select driver to be
      installed</span> dialog will be displayed:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_select.png"><img src="images/vmdp_install_windows_select.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_select.png" target="_blank"><img src="images/vmdp_install_windows_select.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      Browse to the directory that contains the SLE-VMDP driver:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_from_cd.png"><img src="images/vmdp_install_windows_from_cd.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_from_cd.png" target="_blank"><img src="images/vmdp_install_windows_from_cd.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      Select the SUSE driver:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_suse_block_driver.png"><img src="images/vmdp_install_windows_suse_block_driver.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_install_windows_suse_block_driver.png" target="_blank"><img src="images/vmdp_install_windows_suse_block_driver.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
@@ -831,31 +828,31 @@ hljs.configure({
     </p>
    </li><li class="step ">
     <p>
-     To confirm the action, click <span class="guimenu">Yes</span>:
+     To confirm the action, click <span class="guimenu ">Yes</span>:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_signed_driver.png"><img src="images/vmdp_signed_driver.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_signed_driver.png" target="_blank"><img src="images/vmdp_signed_driver.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      Accept the End User License Agreement:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_accept_eula.png"><img src="images/vmdp_accept_eula.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_accept_eula.png" target="_blank"><img src="images/vmdp_accept_eula.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      The program will install the SUSE Drivers for Windows* 7:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmpd_installation_in_progress.png"><img src="images/vmpd_installation_in_progress.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmpd_installation_in_progress.png" target="_blank"><img src="images/vmpd_installation_in_progress.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
      Restart your computer:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_computer_restart.png"><img src="images/vmdp_computer_restart.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_computer_restart.png" target="_blank"><img src="images/vmdp_computer_restart.png" width="" /></a></div>
     </div>
    </li><li class="step ">
     <p>
@@ -863,13 +860,13 @@ hljs.configure({
      successfully installed:
     </p>
     <div class="informalfigure">
-     <div class="mediaobject"><a xmlns="" href="images/vmdp_driver_installed_device_manager.png"><img src="images/vmdp_driver_installed_device_manager.png" width="" /></a></div>
+     <div class="mediaobject"><a xmlns="" href="images/vmdp_driver_installed_device_manager.png" target="_blank"><img src="images/vmdp_driver_installed_device_manager.png" width="" /></a></div>
     </div>
    </li></ol></div></div>
  </div>
 </div>
 
- <div class="sect1 " id="sec-vmdp-legal"><div class="titlepage"><div><div><h2 class="title" id="sec-vmdp-legal"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Legal Notice</span> <a title="Permalink" class="permalink" href="#sec-vmdp-legal">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_copyright_sle.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-legal</li></ul></div></div></div></div>
+ <div class="sect1 " id="sec-vmdp-legal"><div class="titlepage"><div><div><h2 class="title"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Legal Notice</span> <a title="Permalink" class="permalink" href="#sec-vmdp-legal">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_copyright_sle.xml</li><li><span class="ds-label">ID: </span>sec-vmdp-legal</li></ul></div></div></div></div>
  
 
  <p>
@@ -923,7 +920,7 @@ hljs.configure({
  </p>
 </div>
 
- <div class="legal-section"><div class="sect1 " id="id-1.12"><div class="titlepage"><div><div><h2 class="title" id="id-1.12"><span class="number">10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.12">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_gfdl1.2_i.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ <div class="legal-section"><div class="sect1 " id="id-1.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.12">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_gfdl1.2_i.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
  
 
  
@@ -1437,6 +1434,6 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</pre></d
   software.
  </p>
 </div></div>
-</div></div><div class="page-bottom"><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+</div></div><div class="page-bottom"><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2020 
-        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
